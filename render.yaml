@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: ai-chat-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: API_KEY
+        sync: false          # You will enter this manually in Render dashboard
+      - key: NODE_VERSION
+        value: "18"
+    healthCheckPath: /health
